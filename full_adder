@@ -1,0 +1,12 @@
+module full_adder(x,y,z,s,c);
+input x,y,z;
+output s,c;
+
+//2 half adders and 1 OR gate used
+
+wire s1,c1,c2;
+half_adder H1(y,z,s1,c1);
+half_adder H2(s1,x,s,c2);
+
+or (c,c1,c2);
+endmodule
